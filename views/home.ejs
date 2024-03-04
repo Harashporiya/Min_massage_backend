@@ -129,21 +129,12 @@
         <textarea type="text" id="text" name="text"></textarea>
         <br />
         <br />
-        <button><b>POST</b></button>
+        <button id="post"><b>POST</b></button>
     </form>
 
-    <script>
-
-        const form = document.getElementById('form');
-        const add = document.getElementById('add');
-        form.style.display = "none";
-        add.addEventListener("click", function () {
-            form.style.display = "block"
-        })
-    </script>
 
 
-    <div id="overflow-x">
+    <div id="overflow-x" id="create">
     <% if (data) { %>
         <% for(let index=0; index < data.length; index++) { %>
             <div id="create_data">
@@ -173,6 +164,27 @@
             </div>
 
 
+            <script>
+                const post = document.getElementById('post')
+        const overflow = document.getElementById('create_data')
+       const text_title = document.getElementById('text_title')
+        const form = document.getElementById('form');
+        const add = document.getElementById('add');
+        form.style.display = "none";
+        add.addEventListener("click", function () {
+            form.style.display = "block"
+            text_title.style.display = "none"
+            overflow.style.display="none"
+        })
+        post.addEventListener('click', function(){
+            text_title.style.display = "block"
+            overflow.style.display="block"
+            form.style.display = "none"
+        })
+       
+
+
+    </script>
 </body>
 
 </html>
